@@ -16,3 +16,20 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('testslack', function () {
+
+    // logger()->info('my first logger test message!');
+
+    // logger()->channel('syslog')->alert("A test message to the system log of Appache!");
+
+    logger()->channel('slack')->info('My first test message to Slack laravel channel from newly laravel application.');
+
+    return "Weldone!";
+});
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
