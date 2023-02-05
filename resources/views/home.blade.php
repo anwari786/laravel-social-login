@@ -14,7 +14,16 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    {{ __('You are logged in!') }} <br>
+            
+                    {{ 'id = '.auth()->user()->id}} <br>
+                    {{ 'name = '.auth()->user()->name }} <br>
+                    {{ 'email = '.auth()->user()->email }} <br>
+                    <br>
+                    @if (!empty(auth()->user()->oauth()->first()->avatar))
+                        <img width="50" src="{{ auth()->user()->oauth()->first()->avatar }}"><br>
+                    @endif
+
                 </div>
             </div>
         </div>
