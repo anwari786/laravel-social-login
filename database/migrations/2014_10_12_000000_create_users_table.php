@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('password')->nullable();
             $table->bigInteger('provider_id')->nullable();
             $table->string('provider_name')->nullable();
+            $table->string('avatar')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

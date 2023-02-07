@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FileuploadController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 
@@ -39,3 +40,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('auth/{provider}', [LoginController::class, 'redirectToProvider'])->name('to_provider');
 
 Route::get('auth/{provider}/callback', [LoginController::class, 'handleProviderCallback']);
+
+// show file upload form
+Route::get('/fileupload', [FileuploadController::class, 'create'])->name('fileupload_create');
+
+// File upload and store action
+Route::post('/fileupload', [FileuploadController::class, 'store'])->name('fileupload_store');
