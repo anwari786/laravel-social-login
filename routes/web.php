@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FileuploadController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 
@@ -46,3 +47,7 @@ Route::get('/fileupload', [FileuploadController::class, 'create'])->name('fileup
 
 // File upload and store action
 Route::post('/fileupload', [FileuploadController::class, 'store'])->name('fileupload_store');
+
+// Test sending mails
+Route::get('testmail', [HomeController::class, 'sendTestMail'])->name('testmail');
+Route::get('markdowntestmail', [HomeController::class, 'sendMarkdownTestMail'])->name('markdowntestmail');

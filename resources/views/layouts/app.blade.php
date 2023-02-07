@@ -33,6 +33,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('fileupload_create') }}">{{ __('Fileupload') }}</a>
                         </li>
+                        <li class="nav-item">
+                            <a title="Test Markdown mail with attachments" class="nav-link" href="{{ route('markdowntestmail') }}" target="_blank">{{ __('Test Markdown Mail') }}</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
